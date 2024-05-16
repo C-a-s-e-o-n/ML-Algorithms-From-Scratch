@@ -5,3 +5,11 @@ __pychache__/
 *.pyc
 
 .vscode/
+
+*~
+*.org
+*.pem
+*.pkl
+.DS_Store
+loc.py
+src/ec2
