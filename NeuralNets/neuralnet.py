@@ -9,7 +9,7 @@ class Network(object):
 
         # initializes random biases for layers after input layer
         # biases is a list of y x 1 column vectors
-        # weights is a list of y x X vectors, where sizes[:-1] excludes the output layer
+        # weights is a list of y x X matrices, where sizes[:-1] excludes the output layer
         # the zip function here pairs each layer together, and a weight vector is generated for each
         # ex: net = NetWork([3, 2, 5]) 
             # bias 1: random 2 x 1 vector for each neuron in the layer
