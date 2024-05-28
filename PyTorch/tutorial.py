@@ -327,7 +327,7 @@ for epoch in range(num_epochs):
         if (i+1) % 100 == 0:
             print(f'Epoch [{epoch+1}/{num_epochs}], Step [{i+1}/{n_total_steps}], Loss{loss.item():.4f}')
 
-# Test the model: we don't need to computer gradients
+# Test the model: we don't need to compute gradients
 with torch.no_grad():
     n_correct = 0
     n_samples = len(test_loader.dataset)
