@@ -12,14 +12,18 @@ from scipy import signal
 
 class Convolutional(Layer):
     def __init__(self, input_shape, kernel_size, depth):
+        # pytorch convention is to order input tuple as (color channel, height, width)
         input_depth, input_height, input_width = input_shape
+        # number of filters in the conv layer, i.e., depth=32 means 32 filters
+        # filters are analogous to weights, so 32 filters means 
         self.depth = depth
         self.input_shape = input_shape
         self.input_depth = input_depth
         self.output_shape = (depth, input_height - kernel_size + 1, input_width - kernel_size + 1)
-        self.kernerls_shape = (depth, input_depth, kernel_size, kernel_size)
+        # Ex: (32, 1, 3, 3) indicates 32 filters of size 3x3 applied to 1 channel
+        self.kernels_shape = (depth, input_depth, kernel_size, kernel_size)
         self.kernels = np.random.randn(*self.kernels_shape)
-        self.biases = np.random.randn(*self.output_shape)
+        self.biases = np.random.randn(*self.biases)
 
     def forward(self, input):
         self.input = input
