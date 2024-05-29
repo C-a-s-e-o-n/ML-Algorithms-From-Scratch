@@ -2,6 +2,14 @@ import numpy as np
 from layer import Layer
 from scipy import signal
 
+# Note that the formula for calculating the output size of a convolution layer
+# is as follows:
+    # [(W - K + 2P) / S] + 1, where
+    # W is the input volume, i.e. for MNIST, 28x28, W = 28
+    # K is the Kernel Size, typically K = 3 or K = 5
+    # P is the padding, which is typically zero for pure classification tasks,
+    # S is stride, which is the speed of the kernels movement, typically 1
+
 class Convolutional(Layer):
     def __init__(self, input_shape, kernel_size, depth):
         input_depth, input_height, input_width = input_shape
